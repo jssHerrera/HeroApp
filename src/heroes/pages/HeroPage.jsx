@@ -20,7 +20,7 @@ export const HeroPage = () => {
   const { id, superhero, publisher, alter_ego, first_appearance } = hero
   const type = publisher.slice(0, publisher.indexOf(' '));
 
-  const imgPhat =`/img/${heroId}.jpg`
+  const imgPhat =`public/img/${heroId}.jpg`
 
   return (
     <section className='info'>

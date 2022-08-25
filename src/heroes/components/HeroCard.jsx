@@ -4,7 +4,7 @@ export const HeroCard = ({ elem }) => {
   const { id, superhero, publisher} =
     elem;
 
-  const imgPhat =`/img/${id}.jpg`
+    const imgPhat =`public/img/${id}.jpg`
   return (
     <div className="card__list animate__animated animate__fadeIn">
       <span className="card__tag">{publisher}</span>
