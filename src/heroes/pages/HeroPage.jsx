@@ -20,7 +20,8 @@ export const HeroPage = () => {
   const { id, superhero, publisher, alter_ego, first_appearance } = hero
   const type = publisher.slice(0, publisher.indexOf(' '));
 
-  const imgPhat =`public/img/${heroId}.jpg`
+  // const imgPhat =`public/ img/${heroId}.jpg`
+  const imgPhat = new URL(`/src/img/${heroId}.jpg`, import.meta.url).href
 
   return (
     <section className='info'>

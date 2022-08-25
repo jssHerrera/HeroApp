@@ -4,7 +4,7 @@ export const HeroCard = ({ elem }) => {
   const { id, superhero, publisher} =
     elem;
 
-    const imgPhat =`public/img/${id}.png`
+    const imgPhat = new URL(`/src/img/${id}.jpg`, import.meta.url).href
   return (
     <div className="card__list animate__animated animate__fadeIn">
       <span className="card__tag">{publisher}</span>
