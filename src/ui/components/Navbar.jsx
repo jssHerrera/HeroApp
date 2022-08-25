@@ -1,10 +1,16 @@
-import { useState, useContext } from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { useState} from "react";
+import { NavLink, useNavigate } from "react-router-dom";
+import { UseAuthContext } from "../../auth/hook/UseAuthContext";
 import "./Nav.css";
 
 export const NavBar = () => {
   const [menu, setMenu] = useState(false);
   const navigate = useNavigate();
+  const {user, logout} = UseAuthContext()
+  const nombre = user.name.toLocaleLowerCase() || ''
+
+
+
 
   const handleClick = () => {
     setMenu(!menu);
@@ -12,6 +18,7 @@ export const NavBar = () => {
 
   const handleLogout = () => {
     navigate("/login", { replace: true });
+    logout()
   };
 
   return (
@@ -63,7 +70,7 @@ export const NavBar = () => {
         </div>
 
         <div className="nav__btns">
-          <span className="nav__user"> name </span>
+          <span className="nav__user"> {nombre}</span>
           <span className="nav__logoud">
             <i className='bx bx-arrow-from-left'onClick={handleLogout}></i>
           </span>

@@ -1,35 +1,38 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { UseAuthContext } from "./UseAuthContext";
 
-export const UseLogin = (ini={}) => {
+export const UseLogin = (ini = {}) => {
   const [error, setError] = useState(false);
-  const [busqueda, setBusqueda] = useState(ini)
-  const navigate = useNavigate()
+  const [busqueda, setBusqueda] = useState(ini);
 
+  const navigate = useNavigate();
+  const { login } = UseAuthContext();
+
+  // -------------------------------------
   const handleChange = (e) => {
     setBusqueda({
       ...busqueda,
       [e.target.name]: e.target.value,
     });
-  }
+  };
 
+// --------------------------------------------
   const handleSubmit = (e) => {
-    e.preventDefault()
-    if (busqueda.name.trim() === '' || busqueda.email.trim() === '') {
-      setError(true)
-      
+    e.preventDefault();
+    if (busqueda.name.trim() === "" || busqueda.email.trim() === "") {
+      setError(true);
       setTimeout(() => {
-        setError(false)
+        setError(false);
       }, 4000);
-      return
+      return;
     }
-    setError(false)
+    login(busqueda.name);
 
-    navigate('/marvel', { replace: true })
-  }
+    setError(false);
 
-  return {busqueda, error, handleChange, handleSubmit}
-}
+    navigate("/marvel", { replace: true });
+  };
 
-
-
+  return { busqueda, error, handleChange, handleSubmit };
+};

@@ -1,12 +1,8 @@
 import { Link } from "react-router-dom";
 import "./hero.css";
 export const HeroCard = ({ elem }) => {
-  const { id, superhero, publisher, alter_ego, first_appearance, characters } =
-    elem;
-  // const type = publisher.slice(0, publisher.indexOf(' '));
-  // console.log(a);
-  // const imgPhat = `/src/Img/${id}.jpg`
-  const imgPhat = `/src/heroes/img/${id}.jpg`;
+  const { id, superhero, publisher, alter_ego, first_appearance, characters } = elem;
+  const imgPhat = `/src/img/${id}.jpg`;
   return (
     <div className="card__list animate__animated animate__fadeIn">
       <span className="card__tag">{publisher}</span>
