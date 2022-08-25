@@ -28,7 +28,7 @@ export const HeroPage = () => {
       <div className='info__container container '>
 
         <div className='info__img-bg '>
-          <img src={imgPhat} alt={imgPhat} className="info__img animate__animated animate__fadeInLeft" />
+          <img src={imgPhat} alt={imgPhat} className="info__img animate__animated animate__fadeInLeft" loading='lazy'/>
         </div>
 
         <div className="info__social animate__animated animate__fadeIn">
