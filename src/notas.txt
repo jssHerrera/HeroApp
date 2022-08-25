@@ -1,0 +1,2 @@
+react router v6
+npm i query-string

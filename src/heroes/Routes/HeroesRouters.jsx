@@ -1,0 +1,24 @@
+import {
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import { DCPages, HeroPage, MarvelPages, SearchPage } from "../pages";
+import { NavBar } from "../../ui";
+
+export const HeroesRouters = () => {
+  return (
+    <>
+      <NavBar />
+      <Routes>
+        <Route path="marvel" element={<MarvelPages />} />
+        <Route path="dc" element={<DCPages />} />
+
+        <Route path="search" element={<SearchPage />} />
+        <Route path="info/:heroId" element={<HeroPage/>} />
+
+        <Route path="/" element={<Navigate to="/marvel" />} />
+      </Routes>
+    </>
+  );
+};
