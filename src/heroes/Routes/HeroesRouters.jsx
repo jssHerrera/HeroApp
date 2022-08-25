@@ -8,6 +8,7 @@ export const HeroesRouters = () => {
       <NavBar />
       <Routes>
         <Route path="/" element={<MarvelPages />} />
+        
         <Route path="marvel" element={<MarvelPages />} />
         <Route path="dc" element={<DCPages />} />
 

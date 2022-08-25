@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import "./hero.css";
 export const HeroCard = ({ elem }) => {
-  const { id, superhero, publisher, alter_ego, first_appearance, characters } =
+  const { id, superhero, publisher} =
     elem;
 
-  const imgPhat =`/src/assets/img/${id}.jpg`
+  const imgPhat =`/src/assets/${id}.jpg`
   return (
     <div className="card__list animate__animated animate__fadeIn">
       <span className="card__tag">{publisher}</span>
