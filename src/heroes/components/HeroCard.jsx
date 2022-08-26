@@ -8,7 +8,7 @@ export const HeroCard = ({ elem }) => {
   return (
     <div className="card__list animate__animated animate__fadeIn">
       <span className="card__tag">{publisher}</span>
-      <img src={imgPhat} alt="" className="card__img " loading="lazy" />
+      <img src={imgPhat} alt={id} loading="lazy"  className="card__img" />
       <Link to={`/info/${id}`} className="card__description">
         <span className="card__name">{superhero}</span>
       </Link>

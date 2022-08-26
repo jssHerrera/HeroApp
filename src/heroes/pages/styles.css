@@ -24,6 +24,7 @@
 .card__container{
   display: grid;
   row-gap: 4rem;
+  min-height: 100vh;
 }
 .search__card.card__container{
   grid-template-columns: repeat(1, 1fr);
